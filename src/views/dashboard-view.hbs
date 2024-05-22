@@ -1,0 +1,16 @@
+{{> menu active="dashboard"}}
+
+<section class="section">
+  <div class="box box-link-hover-shadow">
+    <h2 class="title">
+      {{publicCategory.title}}
+    </h2>
+    <a href="/category/{{publicCategory._id}}/public" class="button">
+      <span class="icon is-small">
+        <i class="fas fa-folder-open"></i>
+      </span>
+    </a>
+  </div>
+  {{> list-categories}}
+  {{> add-category}}
+</section>

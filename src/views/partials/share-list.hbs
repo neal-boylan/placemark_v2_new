@@ -1,0 +1,21 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+      <tr> 
+        <td>
+          {{firstName}} {{lastName}}
+					<!--a href="/poi/{{../poi._id}}/share/{{_id}}" target="_blank">{{firstName}} </a-->
+          <form class="box" action="/poi/{{../poi._id}}/share/{{_id}}"  method="POST">
+            <button class="button is-primary">Share with {{ firstName }}</button>
+          </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

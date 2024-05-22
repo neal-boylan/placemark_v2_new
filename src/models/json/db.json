@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "_id": "cc14c468-69bb-4ea5-b131-474a569338ae"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "7a32de4e-b77a-4342-b863-10b3deb9a6e7"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "2ded00fe-8fcf-4ed2-a7c8-8f04c9d8df67"
+    }
+  ],
+  "categories": [
+    {
+      "title": "Restaurants",
+      "_id": "cf376d8e-dfab-48dd-aa3e-d48f6ff311af"
+    },
+    {
+      "title": "Libraries",
+      "_id": "85bc19a1-8e28-4b3f-8fd9-56622305f794"
+    },
+    {
+      "title": "Bowling Alleys",
+      "_id": "1c6fdf8d-6054-46a0-b522-760bb202bd10"
+    }
+  ],
+  "pois": [
+    {
+      "name": "a1",
+      "latitude": 1,
+      "longitude": 1,
+      "_id": "c1f96dc1-02d3-4468-a551-3c7495ca56d2",
+      "categoryid": "5573027d-ac83-4ad6-8cd2-d118bab852d8"
+    },
+    {
+      "name": "a2",
+      "latitude": 2,
+      "longitude": 2,
+      "_id": "442bdeea-04bd-47c7-8ac7-9fefaeb03b7d",
+      "categoryid": "5573027d-ac83-4ad6-8cd2-d118bab852d8"
+    }
+  ]
+}

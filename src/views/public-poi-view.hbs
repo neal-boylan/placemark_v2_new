@@ -1,0 +1,64 @@
+{{> menu}}
+
+<section class="section">
+  <div class="name">
+    Category: {{category.title}}
+  </div>
+  <div>
+    Name: {{poi.name}}
+  </div>
+  <div>
+    Description: {{poi.description}}
+  </div>
+  <div>
+    Average Rating: {{poi.averageRating}}
+  </div>
+</section>
+
+<form class="box"  action="/poi/{{category._id}}/addreview/{{poi._id}}" method="POST">
+  <label>Review:</label>
+    <div class="field is-horizontal">
+      <div class="field-body">
+        <div class="field">
+          <input class="input" type="text" name="review", value="{{poi.review}}">
+        </div>
+      </div>
+    </div>
+    <p>Please rate this PoI:</p>
+    <input type="radio" id="1star" name="rating" value=1>
+    <label for="1star">1 Star</label><br>
+    <input type="radio" id="2star" name="rating" value=2>
+    <label for="2star">2 Star</label><br>  
+    <input type="radio" id="3star" name="rating" value=3>
+    <label for="3star">3 Star</label><br><br>
+  <button class="button is-primary">Add Review</button>
+</form>
+
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Reviews</th>
+      <th>Reviewer</th>
+      <th>Rating</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each reviews}}
+      <tr>
+        <td>
+          {{review}}
+        </td>
+        <td>
+					{{reviewer}}
+        </td>
+        <td>
+					{{rating}}/3
+        </td>
+        <td>
+					{{reviewDate}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

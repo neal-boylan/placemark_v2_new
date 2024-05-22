@@ -1,0 +1,36 @@
+{{> menu}}
+
+<section class="section">
+  <div class="name">
+    <h1>{{category.title}}/{{poi.name}}</h1>
+  </div>
+</section>
+
+<form class="box"  action="/poi/{{category._id}}/updatepoi/{{poi._id}}" method="POST">
+  <label>Update PoI Details:</label>
+    <div class="field is-horizontal">
+      <div class="field-body">
+        <div class="field">
+          <input class="input" type="text" name="name", value="{{poi.name}}">
+        </div>
+        <div class="field">
+          <input class="input" type="text" name="latitude" value="{{poi.latitude}}">
+        </div>
+        <div class="field">
+          <input class="input" type="text"  name="longitude" value="{{poi.longitude}}">
+        </div>
+        <div class="field">
+          <input class="input" type="checkbox" name="publicPoi" value="{{poi.publicPoi}}">
+        </div>
+      </div>
+    </div>
+  <label>Description:</label>
+    <div class="field is-horizontal">
+      <div class="field-body">
+        <div class="field">
+          <input class="input" type="text" name="description", value="{{poi.description}}">
+        </div>
+      </div>
+    </div>
+  <button class="button is-primary">Update POI</button>
+</form>

@@ -1,0 +1,34 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each pois}}
+		{{#if publicPoi}}
+      <tr>
+        <td>
+          {{sanitise name}}
+        </td>
+        <td>
+          {{latitude}}
+        </td>
+        <td>
+          {{longitude}}
+        </td>
+        <td>
+          <a href="/poi/{{../category._id}}/viewpublicpoi/{{_id}}" class="button">
+            <span class="icon is-small">
+              <i class="fas fa-folder-open"></i>
+            </span>
+          </a>
+        </td>
+      </tr>
+		{{/if}}
+    {{/each}}
+  </tbody>
+</table>

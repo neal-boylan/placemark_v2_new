@@ -1,0 +1,76 @@
+<script>
+  function check() {
+    document.getElementById("public").checked = true;
+  }
+
+  function uncheck() {
+    document.getElementById("public").checked = false;
+  }
+
+  Handlebars.registerHelper('sanitise', function(text) {
+    text = Handlebars.Utils.escapeExpression(text);
+    return new Handlebars.SafeString(text).toUpperCase();
+  })
+</script>
+
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each category.pois}}
+      <tr>
+        <td>
+          {{sanitise name}}
+        </td>
+        <td>
+          {{latitude}}
+        </td>
+        <td>
+          {{longitude}}
+        </td>
+        <td>
+          <a href="/poi/{{../category._id}}/viewpoi/{{_id}}" class="button">
+            <span class="icon is-small">
+              <i class="fas fa-folder-open"></i>
+            </span>
+          </a>
+        </td>
+        <td>
+          <a href="/poi/{{../category._id}}/editpoi/{{_id}}" class="button">
+            <span class="icon is-small">
+              <i class="fas fa-edit"></i>
+            </span>
+          </a>
+        </td>
+        <td>
+          <a href="/category/{{../category._id}}/deletepoi/{{_id}}" class="ui icon button">
+            <i class="fas fa-trash"></i>
+          </a>
+        </td>
+        <td>
+          {{#if publicPoi}}
+            Public: <input type="checkbox" id="public" checked>
+          {{else}}
+            Public: <input type="checkbox" id="public">
+          {{/if}}
+          <form action="/poi/{{../category._id}}/makepublic/{{_id}}" method="post">
+            <button type="submit" name="publicPoi" value=True onclick="check()">Make Public</button>
+          </form>
+        </td>
+        <td>
+          <a href="/sharepoi/{{_id}}">Share</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
